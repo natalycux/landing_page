@@ -12,8 +12,8 @@
     <script src="https://kit.fontawesome.com/4bb22f668e.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!-- Content -->
-    <button type="button" class="btn btn-dark">Dark</button>
-    <!-- Bootstrap 5 JS local -->
+<?php include '/app/templates/header.php'; ?>
+
+
 </body>
 </html>
