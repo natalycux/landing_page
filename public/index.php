@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/public/assets/sass/header.css">
 </head>
 <body>
+
 <?php include '/Users/Morales/Documents/GitHub/landing_page/app/templates/header.php'; ?>
 
 

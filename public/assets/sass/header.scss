@@ -7,6 +7,20 @@
   --colors-success: #338863; 
 }
 
+*{
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+button{
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
 .header{
   display: flex;
   justify-content: space-around;
@@ -27,6 +41,7 @@ svg{
   fill: var(--color-primary);
   height: 32px;
   cursor: pointer;
+  margin: 7px;
 }
 
 
