@@ -10,9 +10,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@300&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/4bb22f668e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/public/assets/sass/header.css">
 </head>
 <body>
-<?php include '/app/templates/header.php'; ?>
+<?php include '/Users/Morales/Documents/GitHub/landing_page/app/templates/header.php'; ?>
 
 
 </body>
