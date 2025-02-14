@@ -14,7 +14,12 @@
 </head>
 <body>
 
-<?php include '/Users/Morales/Documents/GitHub/landing_page/app/templates/header.php'; ?>
+
+<?php
+require __DIR__ . '/../config/config.php';
+?>
+<?php include BASE_PATH . '/app/templates/header.php'; ?>
+
 
 
 </body>
