@@ -1,7 +1,9 @@
 
 <header class="header" >
+
 	<!-- Ícono del menú -->
-	 <button class="header__button--bar">
+	 <button class="header__button--bar" id="sidebarToggle">
+     
 		<svg class="header_icon" viewBox="0 0 448 512">
 			<path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/>
 		</svg>
@@ -75,5 +77,43 @@
     </ul>
 </nav>
 
+
+
+<div id="sidebar" class="sidebar">
+    <ul class="list-unstyled">
+        <li><a href="#">Categories</a></li>
+        <li><a href="#">New</a></li>
+        <li><a href="#">Sales</a></li>
+        <li><a href="#">Certifications</a></li>
+        <li><a href="#">Explore</a></li>
+    </ul>
+</div>
+
+<div id="overlay" class="overlay"></div>
+
+<script>
+    const sidebar = document.getElementById("sidebar");
+    const toggleButton = document.getElementById("sidebarToggle");
+    const overlay = document.getElementById("overlay");
+
+    
+    toggleButton.addEventListener("click", () => {
+        sidebar.classList.toggle("active");
+        overlay.classList.toggle("active");
+    });
+
+    overlay.addEventListener("click", () => {
+        sidebar.classList.remove("active");
+        overlay.classList.remove("active");
+    });
+
+    document.addEventListener("click", (event) => {
+        const isClickInside = sidebar.contains(event.target) || toggleButton.contains(event.target);
+        if (!isClickInside) {
+            sidebar.classList.remove("active");
+            overlay.classList.remove("active");
+        }
+    });
+</script>
 
 </header>
