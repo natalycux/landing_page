@@ -1,0 +1,126 @@
+/* public/assets/css/footer.css */
+.dark {
+    background-color: #333;
+    color: #fff;
+}
+
+.arrow::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #333;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.title-box h5 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+.ff-socials a {
+    margin-right: 10px;
+    color: #65778C;
+    text-decoration: none;
+}
+
+.ff-socials a:hover {
+    color: #fff;
+}
+
+.footer-quotes blockquote {
+    font-style: italic;
+    border-left: 5px solid #65778C;
+    padding-left: 15px;
+}
+
+.copyright {
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+.footer {
+    background-color: #1a1a1a;
+    color: #f1f1f1;
+    padding: 60px 0;
+    text-align: center;
+    position: relative;
+    font-family: 'Averia Serif Libre', serif;
+}
+
+.footer .logo {
+    margin-bottom: 30px;
+}
+
+.footer .logo img {
+    max-width: 200px;
+}
+
+.footer .socials {
+    margin: 30px 0;
+}
+
+.footer .socials a {
+    margin: 0 15px;
+    color: #f1f1f1;
+    font-size: 1.5rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.footer .socials a:hover {
+    color: #ff6347;
+    transform: scale(1.2);
+}
+
+.footer .links {
+    margin: 30px 0;
+}
+
+.footer .links a {
+    margin: 0 20px;
+    color: #f1f1f1;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.footer .links a:hover {
+    color: #ff6347;
+}
+
+.footer .copyright {
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.footer .back-to-top {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    background-color: #ff6347;
+    color: #fff;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.footer .back-to-top:hover {
+    background-color: #ff4500;
+    transform: scale(1.1);
+}
