@@ -48,10 +48,6 @@ $user_id = 1; // Aquí se debe obtener dinámicamente el usuario logueado
 // Filtrar los cursos que el usuario ha comprado
 $cartCourses = [];
 
-echo "<pre>";
-var_dump($cartCourses); // Muestra el contenido del carrito
-echo "</pre>";
-
 foreach ($purchases as $purchase) {
     if ($purchase['user_id'] == $user_id) {
         // Buscar el curso correspondiente
@@ -66,28 +62,48 @@ foreach ($purchases as $purchase) {
 ?>
 
 
-<h1>Shopping Cart</h1>
 
 <?php if (empty($cartCourses)) : ?>
     <p>Your cart is empty.</p>
     
-echo "<pre>";
-var_dump($cartCourses); // Muestra el contenido del carrito
-echo "</pre>";
+
 <?php else : ?>
-    <ul>
-        <?php foreach ($cartCourses as $course) : ?>
-            <li>
-                <strong><?php echo htmlspecialchars($course['title']); ?></strong> - 
-                <?php echo htmlspecialchars($course['price']); ?> USD
-            </li>
-        <?php endforeach; ?>
-    </ul>
+    <div class="container my-5">
+    <h1 class="text-center">Shopping Cart</h1>
+    
+    <?php if (empty($cartCourses)) : ?>
+        <p class="text-center">Tu carrito está vacío.</p>
+    <?php else : ?>
+        <div class="row g-4">
+            <?php foreach ($cartCourses as $course) : ?>
+                <div class="col-md-6">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title"><?php echo htmlspecialchars($course['title']); ?></h5>
+                            <p class="text-muted">Precio: <strong>$<?php echo htmlspecialchars($course['price']); ?></strong></p>
+                            <button class="btn btn-info" onclick="toggleDetails(<?php echo $course['id']; ?>)">Ver más</button>
+                            <div id="details-<?php echo $course['id']; ?>" class="course-details mt-3 p-3 bg-light border rounded">
+                                <p><strong>Descripción:</strong> <?php echo htmlspecialchars($course['description']); ?></p>
+                                <p><strong>Categoría:</strong> <?php echo htmlspecialchars($course['category']); ?></p>
+                                <p><strong>Fecha:</strong> <?php echo htmlspecialchars($course['created_at']); ?></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
+</div>
 <?php endif; ?>
 
 
 
-
+<script>
+    function toggleDetails(courseId) {
+        let details = document.getElementById("details-" + courseId);
+        details.style.display = details.style.display === "none" ? "block" : "none";
+    }
+</script>
 
     <?php include __DIR__ . '/../app/templates/footer.php'; ?>
 </body>

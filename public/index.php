@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 <span class="badge bg-primary">${course.category}</span>
                                 <p class="text-muted mt-2">Precio: <strong>$${course.price}</strong></p>
                                 <p class="small text-muted">Publicado el: ${course.created_at}</p>
-                                <button class="btn btn-success">Comprar</button>
+                                <button class="btn btn-success buy-btn" data-id="${course.id}">Comprar</button>
                             </div>
                         </div>
                     </div>
@@ -68,6 +68,15 @@ document.addEventListener("DOMContentLoaded", function() {
             });
             document.getElementById("courses-container").innerHTML = coursesHtml;
 
+            // Agregar evento a cada botón de compra
+            document.querySelectorAll(".buy-btn").forEach(button => {
+                button.addEventListener("click", function() {
+                    let courseId = this.getAttribute("data-id");
+                    comprarCurso(courseId);
+                });
+            });
+
+            // Cargar comentarios
             let commentsHtml = "";
             data.comments.forEach(comment => {
                 commentsHtml += `
@@ -81,6 +90,25 @@ document.addEventListener("DOMContentLoaded", function() {
         })
         .catch(error => console.error("Error loading data:", error));
 });
+
+// Función para agregar el curso al carrito en JSON
+function comprarCurso(courseId) {
+    fetch("buy.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ course_id: courseId })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert("Curso agregado al carrito.");
+        } else {
+            alert("Error al agregar el curso.");
+        }
+    })
+    .catch(error => console.error("Error:", error));
+}
+
 </script>
 
 
