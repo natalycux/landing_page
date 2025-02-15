@@ -88,5 +88,17 @@
 
 <div id="overlay" class="overlay"></div>
 
+<script>
+    const sidebar = document.getElementById("sidebar");
+    const toggleButton = document.getElementById("sidebarToggle");
+    const overlay = document.getElementById("overlay");
+
+    
+    toggleButton.addEventListener("click", () => {
+        sidebar.classList.toggle("active");
+        overlay.classList.toggle("active");
+    });
+    
+</script>
 
 </header>
