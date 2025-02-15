@@ -215,8 +215,12 @@ svg{
     }
 
     &__logo{
-      margin: 0 25%;
+      margin: 0 18%;
 
+    }
+
+    &__container--icons{
+      width: 18%;
     }
   }
 
@@ -424,7 +428,6 @@ svg{
 
 
 @media (max-width: 1000px) {
-  .header__container--icons,
   .form,
   .footer-menu {
       display: none;

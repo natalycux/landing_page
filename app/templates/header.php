@@ -54,12 +54,9 @@
                 Categories
             </a>
             <ul class="footer-submenu">
-                <li class="footer-submenu__item"><a href="#" class="footer-submenu__link">Web Develop</a></li>
-                <li class="footer-submenu__item"><a href="#" class="footer-submenu__link"> Digital Marketing</a></li>
-                <li class="footer-submenu__item"><a href="#" class="footer-submenu__link">Bussines</a></li>
-                <li class="footer-submenu__item"><a href="#" class="footer-submenu__link">Art Courses</a></li>
-                <li class="footer-submenu__item"><a href="#" class="footer-submenu__link">Data Science</a></li>
-                <li class="footer-submenu__item"><a href="#" class="footer-submenu__link">Lenguaje</a></li>
+                <li class="footer-submenu__item"><a href="index.php?category=Programming" class="footer-submenu__link">Programming</a></li>
+                <li class="footer-submenu__item"><a href="index.php?category=Design" class="footer-submenu__link">Design</a></li>
+                <li class="footer-submenu__item"><a href="index.php?category=Marketing" class="footer-submenu__link">Marketing</a></li>
             </ul>
         </li>
         <li class="footer-menu__item">
