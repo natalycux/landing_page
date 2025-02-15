@@ -103,7 +103,14 @@
         sidebar.classList.remove("active");
         overlay.classList.remove("active");
     });
-    
+
+    document.addEventListener("click", (event) => {
+        const isClickInside = sidebar.contains(event.target) || toggleButton.contains(event.target);
+        if (!isClickInside) {
+            sidebar.classList.remove("active");
+            overlay.classList.remove("active");
+        }
+    });
 </script>
 
 </header>
