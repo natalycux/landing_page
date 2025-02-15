@@ -21,6 +21,7 @@ require __DIR__ . '/../config/config.php';
 ?>
 <?php include BASE_PATH . '/app/templates/header.php'; ?>
 
+
 <section class="testimonials-section py-5">
     <div class="container-fluid">
         <h2 class="text-center mb-5">What our customers say</h2>
