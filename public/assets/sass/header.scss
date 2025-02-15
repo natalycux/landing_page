@@ -426,3 +426,44 @@ svg{
   color: var(--color-light);                                  
   font-weight: 300;
 }
+
+
+
+
+@media (max-width: 1000px) {
+  .header__container--icons,
+  .form,
+  .footer-menu {
+      display: none;
+  }
+
+  .sidebar {
+      display: block;
+  }
+
+  .sidebar.active {
+      transform: translateX(0);
+  }
+}
+
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  transition: opacity 0.3s;
+  opacity: 0;
+}
+
+#overlay.active {
+  display: block;
+  opacity: 1;
+}
+
+#sidebar {
+  z-index: 20;
+}
