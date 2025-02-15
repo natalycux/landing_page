@@ -229,4 +229,82 @@ svg {
   .footer-menu__link--dropdown {
     padding: 5px 0;
   }
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: var(--color-secondary);
+  color: var(--color-light);
+  transition: left 0.3s ease;
+  padding-top: 60px;
+  z-index: 1000;
+  box-shadow: 2px 0 5px rgba(3, 3, 3, 0.5);
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  padding: 15px 20px;
+  transition: background 0.3s ease;
+}
+
+.sidebar ul li:hover {
+  background: var(--color-secondary);
+}
+
+.sidebar ul li a {
+  color: var(--color-muted);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+  color: var(--color-light);
+}
+
+.sidebar ul li a i {
+  font-size: 18px;
+}
+
+.sidebar ul li.active a {
+  color: var(--color-warning);
+  background: var(--color-secondary);
+  border-radius: 4px;
+}
+
+#sidebarToggle {
+  position: fixed;
+  top: 6px;
+  left: 10px;
+  z-index: 1100;
+  background: var(--color-primary);
+  color: var(--color-light);
+  border: none;
+  padding: 6px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease;
+}
+
+#sidebarToggle:hover {
+  background: var(--color-success);
+}
+
+#sidebarToggle:focus {
+  outline: none;
 }/*# sourceMappingURL=header.css.map */
