@@ -30,6 +30,7 @@ button {
   align-items: center;
   list-style: none;
   height: 110px;
+  margin-bottom: 50px;
 }
 .header__logo {
   display: inline-block;
