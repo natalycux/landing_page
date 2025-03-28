@@ -1,0 +1,26 @@
+const mysql = require('mysql2');
+
+const connection = mysql.createConnection({
+    host: 'localhost',  // O la IP del contenedor, pero primero prueba con localhost
+    user: 'user',
+    password: 'password',
+    database: 'landing_db',
+    port: 3307 // Asegúrate de que coincida con tu `docker-compose.yml`
+});
+
+connection.connect(err => {
+    if (err) {
+        console.error('Error de conexión:', err);
+        return;
+    }
+    console.log('Conexión exitosa a la base de datos');
+
+    connection.query('SELECT * FROM courses', (err, results) => {
+        if (err) {
+            console.error('Error en la consulta:', err);
+        } else {
+            console.log('Datos obtenidos:', JSON.stringify(results, null, 2));
+        }
+        connection.end();
+    });
+});

@@ -13,6 +13,20 @@ services:
     volumes:
       - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
 
+  php:
+    image: php:8.2-apache
+    container_name: php
+    restart: always
+    volumes:
+      - ./public_html:/var/www/html
+    ports:
+      - "8000:80"
+    depends_on:
+      - db
+    build:
+      context: .
+      dockerfile: Dockerfile
+
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: phpmyadmin
